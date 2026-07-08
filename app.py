@@ -1,43 +1,48 @@
-from pathlib import Path
-import sys
-
+import os
 import streamlit as st
+import requests
+from openrouter import ask_openrouter
+
+def get_api_key():
+    try:
+        return st.secrets["OPENROUTER_API_KEY"]
+    except Exception:
+        return os.getenv("OPENROUTER_API_KEY") or ""
 
 
-APP_DIR = Path(__file__).parent
-if str(APP_DIR) not in sys.path:
-    sys.path.insert(0, str(APP_DIR))
+st.title("OpenRouter AI чатбот")
+st.write("Простий чатбот зі Streamlit та OpenRouter REST API.")
 
-from budget_page import show_budget_page
-from contacts_page import show_contacts_page
-from resume_page import show_resume_page
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
-def main():
-    st.set_page_config(
-        page_title="Student Portfolio Projects",
-        page_icon="🎓",
-        layout="wide",
-        initial_sidebar_state="expanded",
-    )
+user_message = st.chat_input("Напишіть повідомлення")
 
-    with st.sidebar:
-        st.title("Навігація")
-        page = st.radio(
-            "Сторінка",
-            ["Резюме", "Personal Budget Tracker", "Список контактів"],
-        )
+if user_message:
+    st.session_state.messages.append({"role": "user", "content": user_message})
+    with st.chat_message("user"):
+        st.markdown(user_message)
 
-        st.divider()
-        st.caption("Фінальний проєкт курсу Python + Streamlit")
+model = st.sidebar.text_input("Model", value="tencent/hy3:free")
+temperature = st.sidebar.slider("Temperature", 0.0, 1.5, 0.7, 0.1)
 
-    if page == "Резюме":
-        show_resume_page()
-    elif page == "Personal Budget Tracker":
-        show_budget_page()
-    else:
-        show_contacts_page()
+system_prompt = st.sidebar.text_area(
+    "System prompt",
+    value="Ти навчальний AI асистент для студентів Python. Відповідай українською, коротко і структуровано.",
+)
 
+try:
+    api_messages = [{"role": "system", "content": system_prompt}]
+    api_messages.extend(st.session_state.messages)
+    answer = ask_openrouter(get_api_key(), api_messages, model, temperature)
+except requests.HTTPError as error:
+    st.error(f"HTTP-помилка OpenRouter API: {error}")
+    st.stop()
+except Exception as error:
+    st.error(f"Помилка OpenRouter API: {error}")
+    st.stop()
 
-if __name__ == "__main__":
-    main()
