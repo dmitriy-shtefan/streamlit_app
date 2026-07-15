@@ -19,7 +19,7 @@ from crewai import Agent, Crew, LLM, Process, Task
 
 
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
-DEFAULT_MODEL = "openai/gpt-oss-120b:free"
+DEFAULT_MODEL = "openai/gpt-oss-20b:free"
 
 def get_api_key():
     try:
@@ -177,7 +177,7 @@ with st.sidebar:
 
 topic = st.text_area(
     "Продукт, послуга або бізнес-задача для кампанії",
-    value="AI-команда для підготовки маркетингової кампанії нового Python-курсу",
+    value="Підготовка маркетингової кампанії нового Python-курсу",
     height=90,
 )
 
