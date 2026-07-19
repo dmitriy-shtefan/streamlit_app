@@ -3,14 +3,12 @@ import sys
 
 import streamlit as st
 
-
 APP_DIR = Path(__file__).parent
 if str(APP_DIR) not in sys.path:
     sys.path.insert(0, str(APP_DIR))
 
-from budget_page import show_budget_page
 from contacts_page import show_contacts_page
-from resume_page import show_resume_page
+from about_page import show_about_page
 
 
 def main():
@@ -21,22 +19,15 @@ def main():
         initial_sidebar_state="expanded",
     )
 
-    with st.sidebar:
-        st.title("Навігація")
-        page = st.radio(
-            "Сторінка",
-            ["Резюме", "Personal Budget Tracker", "Список контактів"],
-        )
+    page = st.navigation(
+        {
+            "": [st.Page(show_about_page, title="Про мене", icon="👤", default=True)],
+            "📁 Мої Проєкти": [st.Page(show_contacts_page, title="Список контактів", icon="👥")]
+        },
+        position="sidebar",
+    )
 
-        st.divider()
-        st.caption("Фінальний проєкт курсу Python + Streamlit")
-
-    if page == "Резюме":
-        show_resume_page()
-    elif page == "Personal Budget Tracker":
-        show_budget_page()
-    else:
-        show_contacts_page()
+    page.run()
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 
 A Streamlit portfolio app with three student projects:
 
-- interactive resume
+- about me page
 - personal budget tracker with JSON storage, filters, charts, and CSV export
 - contacts list with JSON storage, search, city filter, delete action, and CSV export
 

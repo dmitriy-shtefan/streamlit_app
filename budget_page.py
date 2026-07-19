@@ -137,7 +137,7 @@ def show_transaction_list(filtered_transactions, all_transactions):
         st.info("Записів поки немає.")
         return
 
-    st.dataframe(prepare_table(filtered_transactions), use_container_width=True)
+    st.dataframe(prepare_table(filtered_transactions), width="stretch")
 
     st.subheader("Видалення запису")
     selected_id = st.selectbox(

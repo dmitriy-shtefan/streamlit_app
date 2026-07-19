@@ -201,7 +201,7 @@ def show_contacts_tab(filtered_contacts):
 
     st.dataframe(
         contacts_for_table(filtered_contacts),
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
     )
 
