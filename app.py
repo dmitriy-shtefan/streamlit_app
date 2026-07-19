@@ -1,6 +1,6 @@
 import streamlit as st
 
-from contacts_page import show_contacts_page
+from contacts_app.app import show_contacts_page
 from about_page import show_about_page
 
 

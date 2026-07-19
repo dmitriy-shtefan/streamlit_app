@@ -1,8 +1,11 @@
 import json
 import os
 
-FILE_NAME = 'contacts.json'
+from pathlib import Path
 
+
+script_dir = Path(__file__).resolve().parent
+FILE_NAME =  f'{script_dir}/contacts.json'
 
 # Функція save_contacts(contacts),
 # яка зберігає список контактів у файл contacts.json

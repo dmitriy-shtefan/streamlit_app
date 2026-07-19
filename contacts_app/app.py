@@ -1,8 +1,8 @@
 import time
 import streamlit as st
 import pandas as pd
-from files_db import load_contacts, save_contacts, make_contact_id
-from validation import validate_email, validate_phone
+from .files_db import load_contacts, save_contacts, make_contact_id
+from .validation import validate_email, validate_phone
 
 
 CITIES = ('Київ', 'Полтава', 'Харків', 'Львів', 'Одеса', 'Дніпро')
