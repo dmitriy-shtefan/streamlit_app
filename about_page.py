@@ -4,22 +4,20 @@ import streamlit as st
 
 GITHUB_URL = "https://github.com/student"
 EMAIL = "student@github.com"
-AVATAR_PATH = Path(__file__).parent / "assets" / "profile-avatar.png"
+AVATAR_PATH = Path(__file__).parent / "assets" / "profile-avatar.jpeg"
 
 def show_about_page():
     st.markdown(
         """
         <style>
             .hero-role {
-                margin: 0 0 0.75rem;
                 color: #2563eb;
-                font-size: 1.1rem;
-                font-weight: 600;
+                font-size: 20px;
+                font-weight: bold;
             }
             .profile-photo img {
                 border-radius: 50%;
                 border: 4px solid #dbeafe;
-                box-shadow: 0 8px 20px rgba(37, 99, 235, 0.18);
             }
         </style>
         """,
@@ -30,7 +28,7 @@ def show_about_page():
 
     with photo_column:
         st.markdown("<div class='profile-photo'>", unsafe_allow_html=True)
-        st.image(str(AVATAR_PATH), width=190)
+        st.image(str(AVATAR_PATH), width=200)
         st.markdown("</div>", unsafe_allow_html=True)
 
     with intro_column:

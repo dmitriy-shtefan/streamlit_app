@@ -13,7 +13,7 @@ from about_page import show_about_page
 
 def main():
     st.set_page_config(
-        page_title="Student Portfolio Projects",
+        page_title="Dmytro Shtefan",
         page_icon="🎓",
         layout="wide",
         initial_sidebar_state="expanded",
