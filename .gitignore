@@ -7,3 +7,4 @@ venv/
 .streamlit/secrets.toml
 .playwright-cli/
 .idea
+AGENTS.md

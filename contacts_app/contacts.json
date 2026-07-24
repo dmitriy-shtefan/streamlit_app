@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Максим",
+    "phone": "+380986665544",
+    "email": "maxim@gmail.com",
+    "city": "Львів"
+  },
+  {
+    "id": 3,
+    "name": "Олег",
+    "phone": "+380986665534",
+    "email": "oleg@gmail.com",
+    "city": "Львів"
+  },
+  {
+    "id": 4,
+    "name": "Андрій",
+    "phone": "+380998887766",
+    "email": "andrey@gmailc.com",
+    "city": "Київ"
+  },
+  {
+    "id": 6,
+    "name": "Олег",
+    "phone": "+380998887744",
+    "email": "Oleg@gmail.com",
+    "city": "Одеса"
+  },
+  {
+    "id": 7,
+    "name": "Олександр",
+    "phone": "+380998887744",
+    "email": "alex@gmail.com",
+    "city": "Одеса"
+  },
+  {
+    "id": 8,
+    "name": "Олег",
+    "phone": "+380998887744",
+    "email": "Oleg@gmail.com",
+    "city": "Одеса"
+  },
+  {
+    "id": 9,
+    "name": "Василій",
+    "phone": "+380998887744",
+    "email": "vasiliy@gmail.com",
+    "city": "Полтава"
+  },
+  {
+    "id": 10,
+    "name": "Юрій",
+    "phone": "+380998887744",
+    "email": "yuriy@gmail.com",
+    "city": "Полтава"
+  },
+  {
+    "id": 11,
+    "name": "Олег",
+    "phone": "+380998887744",
+    "email": "Oleg@gmail.com",
+    "city": "Полтава"
+  },
+  {
+    "id": 12,
+    "name": "Валерій",
+    "phone": "+380998887111",
+    "email": "Valeriy@gmail.com",
+    "city": "Дніпро"
+  },
+  {
+    "id": 13,
+    "name": "Ігор",
+    "phone": "+380998887111",
+    "email": "igor@gmail.com",
+    "city": "Дніпро"
+  },
+  {
+    "id": 14,
+    "name": "Семен",
+    "phone": "+380998887111",
+    "email": "semen@gmail.com",
+    "city": "Дніпро"
+  }
+]
